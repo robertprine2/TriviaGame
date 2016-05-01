@@ -1,8 +1,22 @@
 body {
 	text-align: center;
-	
+	background-image: url("../images/background.jpg");
+	color: black;
+	background-repeat: no-repeat;
+	background-size: 100% 1500px;
+	background-position: center;
+	font-family: 'Special Elite', cursive;
 }
 
+.bgColor {
+	background-color: yellow;
+	margin-top: 100px;
+}
+
+h1 {
+	padding: 50px;
+	font-size: 50px;
+}
 
 /* Social Icons */
 
@@ -30,4 +44,5 @@ body {
 footer {
 	text-align: center;
 	padding: 30px;
+	color: white;
 }
