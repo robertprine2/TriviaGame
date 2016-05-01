@@ -2,6 +2,7 @@ body {
 	text-align: center;
 	background-image: url("../images/background.jpg");
 	color: black;
+	line-height: 1.5;
 	background-repeat: no-repeat;
 	background-size: 100% 1500px;
 	background-position: center;
@@ -30,7 +31,21 @@ h1 {
 
 /* buttons/answers */
 
+#start {
+	background-color: #d9df41;
+	opacity: 0.9;
+	padding: 10px;
+	font-size: 30px;
+	border: none;
+	-moz-border-radius: 30px;
+	-webkit-border-radius: 30px;
+	border-radius: 30px;
+}
 
+#start:hover {
+	background-color: blue;
+	color: white;
+}
 
 
 
