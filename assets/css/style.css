@@ -9,14 +9,30 @@ body {
 }
 
 .bgColor {
-	background-color: yellow;
-	margin-top: 100px;
+	background-color: #d9df41;
+	opacity: 0.9;
+	margin-top: 50px;
+	height: 700px;
 }
 
 h1 {
 	padding: 50px;
 	font-size: 50px;
 }
+
+/* Timer countdown */
+
+
+
+/* Question area */
+
+
+
+/* buttons/answers */
+
+
+
+
 
 /* Social Icons */
 

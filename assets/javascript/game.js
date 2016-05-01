@@ -8,7 +8,74 @@ $(document).ready(function(){
 
 		// question slide object array that contains - question, answer1, answer2, answer3, answer4,
 
-		// correct slide object array contains -
+		questions:
+			[{
+			question: "What is a group of jellyfish called?",
+			answer1: "A School",
+			answer2: "A Smack",
+			answer3: "A Herd",
+			answer4: "A Murder",
+			image: "<img src='jellyfish.gif'"
+			},
+			{
+			question: "In 1889, the queen of italy, Margherita Savoy,...",
+			answer1: "was the first to have a pet giraffe.",
+			answer2: "created the diving board.",
+			answer3: "ordered the first pizza delivery.",
+			answer4: "held the first cooking competition.",
+			image: "<img src='pizza.gif'"
+			},
+			{
+			question: ,
+			answer1: ,
+			answer2: ,
+			answer3: ,
+			answer4: ,
+			image: 
+			},
+			{
+			question: ,
+			answer1: ,
+			answer2: ,
+			answer3: ,
+			answer4: ,
+			image: 
+			},
+			{
+			question: ,
+			answer1: ,
+			answer2: ,
+			answer3: ,
+			answer4: ,
+			image: 
+			},
+			{
+			question: ,
+			answer1: ,
+			answer2: ,
+			answer3: ,
+			answer4: ,
+			image: 
+			},
+			{
+			question: ,
+			answer1: ,
+			answer2: ,
+			answer3: ,
+			answer4: ,
+			image: 
+			},
+			{
+			question: ,
+			answer1: ,
+			answer2: ,
+			answer3: ,
+			answer4: ,
+			image: 
+			}]
+		},
+
+		// correct slide object array contains - Correct!, 
 
 		// incorrect slide object array contains - 
 
@@ -32,7 +99,7 @@ $(document).ready(function(){
 
 		// timer for correct answer slide, incorrect answer slide, and time out slide on zero moves to the next part of the array
 
-		// if statement for onclick buttons to have class correct yield you got it right page and correct count ++
+		// if statement for onclick buttons to have class correct, say "Correct", have the correct answer, pull image, andcorrect count ++
 
 		// else statemen for onclick buttons to yield you got it wrong and show the right answer page incorrect count ++
 
