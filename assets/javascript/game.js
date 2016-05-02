@@ -9,69 +9,70 @@ window.onload = function() {
 		// question slide object array that contains - question, answer1, answer2, answer3, answer4,
 
 		questions:
-			[{
-			question: "What is a group of jellyfish called?",
-			answer1: "A School",
-			answer2: "A Smack",
-			answer3: "A Herd",
-			answer4: "A Murder",
-			correct: "A Smack",
-			image: "<img src='assets/images/jellyfish.gif'>"
-			},
-			{
-			question: "In 1889, the queen of italy, Margherita Savoy,...",
-			answer1: "was the first person to have a pet giraffe.",
-			answer2: "created the first margherita pizza.",
-			answer3: "ordered the first pizza delivery.",
-			answer4: "held the first cooking competition.",
-			correct: "ordered the first pizza delivery.",
-			image: "<img src='assets/images/pizza.gif'>"
-			},
-			{
-			question: "How many calories do you burn an hour banging your head against a wall?",
-			answer1: "150 calories",
-			answer2: "25 calories",
-			answer3: "75 calories",
-			answer4: "2000 calories",
-			correct: "150 calories",
-			image: "<img src='assets/images/headwall.gif'>"
-			},
-			{
-			question: "What can happen when a hippo is upset?",
-			answer1: "It will eat it's troubles away.",
-			answer2: "It's sweat turns red.",
-			answer3: "It runs away.",
-			answer4: "It hums eye of the tiger as it starts to charge you.",
-			correct: "It's sweat turns red.",
-			image: "<img src='assets/images/hippo.jpg'>"
-			},
-			{
-			question: "What do billy goats do to attact females?",
-			answer1: "They make a nest which attracts females.",
-			answer2: "They sprout colorful feathers and show them off.",
-			answer3: "They dance on their hind legs to impress them.",
-			answer4: "They urinate on their own heads to smell better.",
-			correct: "They urinate on their own heads to smell better.",
-			image: "<img src='assets/images/goat.gif'>"
-			},
-			{
-			question: "What did the person who invented the Frisbee have done to himself when he died?",
-			answer1: "He had his ashes spread over a disc golf course.",
-			answer2: "He had his ashes put in a bottle and thrown into the ocean.",
-			answer3: "He had his ashes made into Frisbees.",
-			answer4: "He had his ashes put into the foundation of the house he built for his grandchild.",
-			correct: "He had his ashes made into Frisbees.",
-			image: "<img src='assets/images/frizbee.gif'>"
-			},
-			{
-			question: "During your lifetime, you will produce enough saliva to fill...",
-			answer1: "six cups.",
-			answer2: "the Great Salt Lake.",
-			answer3: "three bathtubs.",
-			answer4: "two swimming pools.",
-			correct: "two swimming pools.",
-			image: "<img src='assets/images/drool.gif'>"
-			},
+			[
+			// {
+			// question: "What is a group of jellyfish called?",
+			// answer1: "A School",
+			// answer2: "A Smack",
+			// answer3: "A Herd",
+			// answer4: "A Murder",
+			// correct: "A Smack",
+			// image: "<img src='assets/images/jellyfish.gif'>"
+			// },
+			// {
+			// question: "In 1889, the queen of italy, Margherita Savoy,...",
+			// answer1: "was the first person to have a pet giraffe.",
+			// answer2: "created the first margherita pizza.",
+			// answer3: "ordered the first pizza delivery.",
+			// answer4: "held the first cooking competition.",
+			// correct: "ordered the first pizza delivery.",
+			// image: "<img src='assets/images/pizza.gif'>"
+			// },
+			// {
+			// question: "How many calories do you burn an hour banging your head against a wall?",
+			// answer1: "150 calories",
+			// answer2: "25 calories",
+			// answer3: "75 calories",
+			// answer4: "2000 calories",
+			// correct: "150 calories",
+			// image: "<img src='assets/images/headwall.gif'>"
+			// },
+			// {
+			// question: "What can happen when a hippo is upset?",
+			// answer1: "Its sweat turns red.",
+			// answer2: "It will eat it's troubles away.",
+			// answer3: "It runs away.",
+			// answer4: "It hums eye of the tiger as it starts to charge you.",
+			// correct: "Its sweat turns red.",
+			// image: "<img src='assets/images/hippo.gif'>"
+			// },
+			// {
+			// question: "What do billy goats do to attact females?",
+			// answer1: "They make a nest which attracts females.",
+			// answer2: "They sprout colorful feathers and show them off.",
+			// answer3: "They dance on their hind legs to impress them.",
+			// answer4: "They urinate on their own heads to smell better.",
+			// correct: "They urinate on their own heads to smell better.",
+			// image: "<img src='assets/images/goat.gif'>"
+			// },
+			// {
+			// question: "What did the person who invented the Frisbee have done to himself when he died?",
+			// answer1: "He had his ashes spread over a disc golf course.",
+			// answer2: "He had his ashes put in a bottle and thrown into the ocean.",
+			// answer3: "He had his ashes made into Frisbees.",
+			// answer4: "He had his ashes put into the foundation of the house he built for his grandchild.",
+			// correct: "He had his ashes made into Frisbees.",
+			// image: "<img src='assets/images/frisbee.gif'>"
+			// },
+			// {
+			// question: "During your lifetime, you will produce enough saliva to fill...",
+			// answer1: "six cups.",
+			// answer2: "the Great Salt Lake.",
+			// answer3: "three bathtubs.",
+			// answer4: "two swimming pools.",
+			// correct: "two swimming pools.",
+			// image: "<img src='assets/images/drool.gif'>"
+			// },
 			{
 			question: "Which of these is not a paradox?",
 			answer1: 'If Pinocchio said, "My nose will grow now."',
@@ -219,6 +220,8 @@ window.onload = function() {
 				game.qNumber++;
 				game.time = 30;
 
+				
+
 				// if statement to check when to go to the end slide
 				
 				if (game.qNumber == 8) {
@@ -228,6 +231,7 @@ window.onload = function() {
 				else {
 					game.timeout();
 				}
+				
 
 			} // End of if statment comparing data and correct answer
 
