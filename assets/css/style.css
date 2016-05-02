@@ -36,7 +36,7 @@ h1 {
 
 /* buttons/answers */
 
-#start {
+button {
 	background-color: #d9df41;
 	opacity: 0.9;
 	padding: 10px;
@@ -48,7 +48,7 @@ h1 {
 	margin: 10px;
 }
 
-#start:hover {
+button:hover {
 	background-color: blue;
 	color: white;
 }
