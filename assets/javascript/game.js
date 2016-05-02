@@ -81,6 +81,7 @@ window.onload = function() {
 			// correct: ,
 			// image: 
 			// }
+			
 			],
 
 		// variable for time
@@ -115,6 +116,7 @@ window.onload = function() {
 			$("#time").html("");
 			$("#question").html("");
 			$("#buttons").html("<button id ='start'>Start</button>")
+			$("#start").click(game.questionCycle);
 		},
 
 		// Start button click creates the time remaining object and calls the forloop to start 
@@ -148,7 +150,15 @@ window.onload = function() {
 				game.qNumber++;
 				game.time = 30;
 
-				game.timeout();
+				// if statement to check when to go to the end slide
+				
+				if (game.qNumber == 2) {
+					game.end();
+				}
+
+				else {
+					game.timeout();
+				}
 			}
 
 			
@@ -209,7 +219,16 @@ window.onload = function() {
 
 				game.qNumber++;
 				game.time = 30;
-				game.timeout();
+
+				// if statement to check when to go to the end slide
+				
+				if (game.qNumber == 2) {
+					game.end();
+				}
+
+				else {
+					game.timeout();
+				}
 
 			} // End of if statment comparing data and correct answer
 
@@ -225,7 +244,16 @@ window.onload = function() {
 
 				game.qNumber++;
 				game.time = 30;
-				game.timeout();
+				
+				// if statement to check when to go to the end slide
+				
+				if (game.qNumber == 2) {
+					game.end();
+				}
+
+				else {
+					game.timeout();
+				}
 
 			} // End of else statement comparing data and correct answer
 			
@@ -234,11 +262,25 @@ window.onload = function() {
 
 		// End slide after for loop that contains: All done, here's how you did!, correct answers:, Incorrect Answers:, Unanswered:, Start Over? reset button that calls reset variable
 
+		end: function() {
+
+			game.stop();
+
+			$("#question").html("<p>You did it! Here are your results:</p>");
+			$("#buttons").html("<p>Correct Answers: " + game.correct + "</p>");
+			$("#buttons").append("<p>Incorrect Answers: " + game.incorrect + "</p>");
+			$("#buttons").append("<p>Unanswered: " + game.unanswered + "</p>");
+			$("#buttons").append("<button id='reset'>Start Over?</button>");
+
+			$("#reset").click(game.reset);
+
+		} // End of end function
 
 	}; // end game object
 
 	// Start button click listener calls the start method
 
 	$("#start").click(game.questionCycle);
+	
 
 }; // Ends window.onload function
