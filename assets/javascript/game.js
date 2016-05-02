@@ -16,7 +16,7 @@ window.onload = function() {
 			answer3: "A Herd",
 			answer4: "A Murder",
 			correct: "A Smack",
-			image: "<img src='jellyfish.gif'"
+			image: "<img src='assets/images/jellyfish.gif'>"
 			},
 			{
 			question: "In 1889, the queen of italy, Margherita Savoy,...",
@@ -25,7 +25,7 @@ window.onload = function() {
 			answer3: "ordered the first pizza delivery.",
 			answer4: "held the first cooking competition.",
 			correct: "ordered the first pizza delivery.",
-			image: "<img src='pizza.gif'"
+			image: "<img src='assets/images/pizza.gif'>"
 			},
 			// {
 			// question: ,
@@ -33,6 +33,7 @@ window.onload = function() {
 			// answer2: ,
 			// answer3: ,
 			// answer4: ,
+			// correct: ,
 			// image: 
 			// },
 			// {
@@ -41,6 +42,7 @@ window.onload = function() {
 			// answer2: ,
 			// answer3: ,
 			// answer4: ,
+			// correct: ,
 			// image: 
 			// },
 			// {
@@ -49,6 +51,7 @@ window.onload = function() {
 			// answer2: ,
 			// answer3: ,
 			// answer4: ,
+			// correct: ,
 			// image: 
 			// },
 			// {
@@ -57,6 +60,7 @@ window.onload = function() {
 			// answer2: ,
 			// answer3: ,
 			// answer4: ,
+			// correct: ,
 			// image: 
 			// },
 			// {
@@ -65,6 +69,7 @@ window.onload = function() {
 			// answer2: ,
 			// answer3: ,
 			// answer4: ,
+			// correct: ,
 			// image: 
 			// },
 			// {
@@ -73,6 +78,7 @@ window.onload = function() {
 			// answer2: ,
 			// answer3: ,
 			// answer4: ,
+			// correct: ,
 			// image: 
 			// }
 			],
@@ -101,7 +107,7 @@ window.onload = function() {
 
 		reset: function() {
 			game.time = 30;
-			game.qNumber = 1;
+			game.qNumber = 0;
 			game.correct = 0;
 			game.incorrect = 0;
 			game.unanswered = 0;
@@ -114,7 +120,7 @@ window.onload = function() {
 		// Start button click creates the time remaining object and calls the forloop to start 
 
 		start: function() {
-			$("#time").html(game.time);
+			$("#time").html("<p>Time Remaining: " + game.time + " Seconds</p>");
 			game.countdown = setInterval(game.count, 1000);
 
 		}, //end of start function
@@ -125,14 +131,27 @@ window.onload = function() {
 
 			game.time--;
 			
+			// puts the current time left on the page
+
+			$("#time").html("<p>Time Remaining: " + game.time + " Seconds</p>");
+
 			// if statement to check when time gets to zero
 
 			if (game.time <= 0) {
+				game.unanswered++;
 				game.stop();
+
+				$("#question").html("<p>Out of Time!</p>");
+				$("#buttons").html("<p>The correct answer was: " + game.questions[game.qNumber].correct + "</p>");
+				$("#buttons").append(game.questions[game.qNumber].image);
+
+				game.qNumber++;
+				game.time = 30;
+
+				// *********Add timestop before - game.questionCycle();
 			}
 
-			// puts the current time left on the page
-			$("#time").html(game.time);
+			
 			
 
 		}, // End of count function
@@ -157,10 +176,10 @@ window.onload = function() {
 
 			// get answer options
 
-			$("#buttons").html("<button class='guess' data-answer='" + game.questions[game.qNumber].correct + "'>" + game.questions[game.qNumber].answer1 + "</button><br>");
-			$("#buttons").append("<button class='guess' data-answer='" + game.questions[game.qNumber].correct + "'>" + game.questions[game.qNumber].answer2 + "</button><br>");
-			$("#buttons").append("<button class='guess' data-answer='" + game.questions[game.qNumber].correct + "'>" + game.questions[game.qNumber].answer3 + "</button><br>");
-			$("#buttons").append("<button class='guess' data-answer='" + game.questions[game.qNumber].correct + "'>" + game.questions[game.qNumber].answer4 + "</button>");
+			$("#buttons").html("<button class='guess' data-answer='" + game.questions[game.qNumber].answer1 + "'>" + game.questions[game.qNumber].answer1 + "</button><br>");
+			$("#buttons").append("<button class='guess' data-answer='" + game.questions[game.qNumber].answer2 + "'>" + game.questions[game.qNumber].answer2 + "</button><br>");
+			$("#buttons").append("<button class='guess' data-answer='" + game.questions[game.qNumber].answer3 + "'>" + game.questions[game.qNumber].answer3 + "</button><br>");
+			$("#buttons").append("<button class='guess' data-answer='" + game.questions[game.qNumber].answer4 + "'>" + game.questions[game.qNumber].answer4 + "</button>");
 
 			// onclick buttons
 
@@ -172,19 +191,44 @@ window.onload = function() {
 
 		// timer for correct answer slide, incorrect answer slide, and time out slide on zero moves to the next part of the array
 
+		// Determines if the guess is right or wrong
+
 		goodGuess: function() {
 
-			// if 
+			// if statement for onclick buttons to have class correct, say "Correct", have the correct answer, pull image, andcorrect count ++
 
-			// // ******Where does this go? Changes the question number
+			if (($(this).data("answer")) === game.questions[game.qNumber].correct) {
+				game.correct++;
+				game.stop();
 
-			// game.qNumber++;
+				$("#question").html("<p>Correct!</p>");
+				
+				$("#buttons").html(game.questions[game.qNumber].image);
+
+				game.qNumber++;
+				game.time = 30;
+				// ***** Add a time stopgame.questionCycle();
+
+			} // End of if statment comparing data and correct answer
+
+			// else statemen for onclick buttons to yield you got it wrong and show the right answer page incorrect count ++
+
+			else {
+				game.incorrect++;
+				game.stop();
+
+				$("#question").html("<p>Nope!</p>");
+				$("#buttons").html("<p>The correct answer was: " + game.questions[game.qNumber].correct + "</p>");
+				$("#buttons").append(game.questions[game.qNumber].image);
+
+				game.qNumber++;
+				game.time = 30;
+				// ***** Add a time stop to - game.questionCycle();
+
+			} // End of else statement comparing data and correct answer
+			
 
 		}, // End of correct function
-
-		// if statement for onclick buttons to have class correct, say "Correct", have the correct answer, pull image, andcorrect count ++
-
-		// else statemen for onclick buttons to yield you got it wrong and show the right answer page incorrect count ++
 
 		// End slide after for loop that contains: All done, here's how you did!, correct answers:, Incorrect Answers:, Unanswered:, Start Over? reset button that calls reset variable
 
