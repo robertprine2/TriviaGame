@@ -135,7 +135,7 @@ window.onload = function() {
 
 			$("#time").html("<p>Time Remaining: " + game.time + " Seconds</p>");
 
-			// if statement to check when time gets to zero
+			// if the timer reaches 0 move to the correct answer slide and unanswered count ++
 
 			if (game.time <= 0) {
 				game.unanswered++;
@@ -148,7 +148,7 @@ window.onload = function() {
 				game.qNumber++;
 				game.time = 30;
 
-				// *********Add timestop before - game.questionCycle();
+				game.timeout();
 			}
 
 			
@@ -185,11 +185,13 @@ window.onload = function() {
 
 			$(".guess").click(game.goodGuess);
 
-		}, // End of for loop function to cycle through questions
-
-		// if the timer reaches 0 move to the correct answer slide and unanswered count ++
+		}, // End of function to cycle through questions
 
 		// timer for correct answer slide, incorrect answer slide, and time out slide on zero moves to the next part of the array
+
+		timeout: function() {
+			var wait = setTimeout(game.questionCycle, 5000);
+		},
 
 		// Determines if the guess is right or wrong
 
@@ -207,7 +209,7 @@ window.onload = function() {
 
 				game.qNumber++;
 				game.time = 30;
-				// ***** Add a time stopgame.questionCycle();
+				game.timeout();
 
 			} // End of if statment comparing data and correct answer
 
@@ -223,7 +225,7 @@ window.onload = function() {
 
 				game.qNumber++;
 				game.time = 30;
-				// ***** Add a time stop to - game.questionCycle();
+				game.timeout();
 
 			} // End of else statement comparing data and correct answer
 			
