@@ -15,6 +15,9 @@ body {
 	opacity: 0.9;
 	margin-top: 50px;
 	height: 100%;
+	-moz-border-radius: 50px;
+	-webkit-border-radius: 50px;
+	border-radius: 50px;
 }
 
 h1 {
