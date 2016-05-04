@@ -1,6 +1,6 @@
 // load js right away, possbily before html is finished loading
 
-window.onload = function() {
+$(document).ready(function(){
 
 	//game object to contain variables and methods
 
@@ -298,4 +298,4 @@ window.onload = function() {
 	$("#start").click(game.questionCycle);
 	
 
-}; // Ends window.onload function
+}); // Ends window.onload function
