@@ -161,7 +161,7 @@ $(document).ready(function(){
 				// if statement to check when to go to the end slide
 				
 				if (game.qNumber == 8) {
-					game.end();
+					setTimeout(game.end, 5000);
 				}
 
 				else {
@@ -235,7 +235,7 @@ $(document).ready(function(){
 				// if statement to check when to go to the end slide
 				
 				if (game.qNumber == 8) {
-					game.end();
+					setTimeout(game.end, 5000);
 				}
 
 				else {
@@ -263,7 +263,7 @@ $(document).ready(function(){
 				// if statement to check when to go to the end slide
 				
 				if (game.qNumber == 8) {
-					game.end();
+					setTimeout(game.end, 5000);
 				}
 
 				else {
