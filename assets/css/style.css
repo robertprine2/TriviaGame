@@ -4,7 +4,7 @@ body {
 	color: black;
 	line-height: 1.5;
 	background-repeat: no-repeat;
-	background-size: 100% 1500px;
+	background-size: 100% 100%;
 	background-position: center;
 	font-family: 'Special Elite', cursive;
 	font-size: 30px;
@@ -15,14 +15,21 @@ body {
 	opacity: 0.9;
 	margin-top: 50px;
 	height: 100%;
-	-moz-border-radius: 50px;
-	-webkit-border-radius: 50px;
-	border-radius: 50px;
+	-moz-border-radius: 50%;
+	-webkit-border-radius: 50%;
+	border-radius: 50%;
+	padding: 80px;
 }
 
 h1 {
 	padding: 50px;
 	font-size: 50px;
+}
+
+.vcenter {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
 }
 
 /* Timer countdown */
@@ -39,6 +46,13 @@ h1 {
 
 /* buttons/answers */
 
+#buttons img {
+	-moz-border-radius: 50%;
+	-webkit-border-radius: 50%;
+	border-radius: 50%;
+	width: 250px;
+	height: 150px;
+}
 button {
 	background-color: #d9df41;
 	opacity: 0.9;
@@ -56,7 +70,9 @@ button:hover {
 	color: white;
 }
 
-
+#reset {
+	background-color: green;
+}
 
 /* Social Icons */
 
