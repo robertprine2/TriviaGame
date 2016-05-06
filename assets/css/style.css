@@ -18,7 +18,10 @@ body {
 	-moz-border-radius: 50%;
 	-webkit-border-radius: 50%;
 	border-radius: 50%;
-	padding: 80px;
+	padding-top: 80px;
+	padding-bottom: 80px;
+	padding-left: 0px;
+	padding-right: 0px;
 }
 
 h1 {
@@ -35,13 +38,20 @@ h1 {
 /* Timer countdown */
 
 #time {
-	margin: 10px;
+	margin-top: 10px;
+	margin-bottom: 10px;
 }
 
 /* Question area */
 
 #question {
-	margin: 10px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+#buttons {
+	margin-top: 10px;
+	margin-bottom: 10px;
 }
 
 /* buttons/answers */
